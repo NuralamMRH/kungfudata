@@ -1,5 +1,3 @@
-import Header from "./Header";
-import Footer from "./Footer";
 import SvgTemplates from "./SvgTemplates";
 import { useFramerRuntime } from "../../lib/useFramerRuntime";
 
@@ -7,7 +5,7 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC<LayoutProps> = () => {
   useFramerRuntime();
 
   return (

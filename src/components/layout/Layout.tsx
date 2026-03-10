@@ -1,7 +1,11 @@
 import SvgTemplates from "./SvgTemplates";
 import { useFramerRuntime } from "../../lib/useFramerRuntime";
 
-const Layout: React.FC = () => {
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+const Layout: React.FC<LayoutProps> = () => {
   useFramerRuntime();
 
   return (

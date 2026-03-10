@@ -1,0 +1,85 @@
+@import "./framer.css";
+@import "tailwindcss";
+
+@theme {
+  --color-brand-dark: rgb(10, 10, 10);
+  --color-brand-light: rgb(255, 255, 255);
+
+  --font-inter: "Inter", system-ui, sans-serif;
+
+  --letter-spacing-tightest: -0.07em;
+  --letter-spacing-tighter: -0.06em;
+  --letter-spacing-tight: -0.04em;
+
+  --radius-brand-card: 18px;
+  --radius-brand-button: 50px;
+}
+
+:root {
+  font-family: var(--font-inter);
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light;
+  color: var(--color-brand-dark);
+  background-color: var(--color-brand-light);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-bold tracking-tight; /* Using local tracking-tight or custom */
+}
+
+/* Custom Utilities for Framer-like precision */
+@utility tracking-framer {
+  letter-spacing: -0.04em;
+}
+
+@utility tracking-stats {
+  letter-spacing: -0.07em;
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility glass {
+  @apply bg-white/80 backdrop-blur-md border border-white/20;
+}
+
+@utility noise {
+  background-image: url("https://framerusercontent.com/images/rR6HYXBrMmX4cRpXfXUOvpvpB0.png");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* Progressive Blur utility */
+.progressive-blur {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Replicating the multi-layered blur from Framer */
+.progressive-blur div {
+  position: absolute;
+  inset: 0;
+  mask-image: linear-gradient(to bottom, transparent, black);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black);
+}
